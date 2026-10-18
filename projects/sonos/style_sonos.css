@@ -1,0 +1,48 @@
+.header {
+  position: relative;
+  display: block;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--yellow);
+  background: var(--black);
+}
+
+.project-header-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+
+/* ——————————small screen styles——————————— */
+@media (max-width: 600px) {
+  .header {
+    border-bottom-width: 1px;
+  }
+
+  .project-header-image {
+    aspect-ratio: 4 / 3;   /* Bild wird höher, Seiten werden abgeschnitten */
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.project-content{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-image {
+  display: block;
+  height: 100vh;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  padding: 20px;
+}

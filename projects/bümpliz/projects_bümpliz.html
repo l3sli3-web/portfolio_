@@ -10,26 +10,24 @@
 <body>
 
   <header class="site-header">
-    <a href="#" class="logo">
-      <svg class="logo-icon" viewBox="0 0 120 66" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="60" cy="33" rx="67" ry="30" fill="#F5E600" stroke="#000" stroke-width="2"/>
-        <circle cx="52" cy="24" r="3.2" fill="#000"/>
-        <circle cx="68" cy="24" r="3.2" fill="#000"/>
-        <line x1="60" y1="29" x2="60" y2="42" stroke="#000" stroke-width="3.2" stroke-linecap="square"/>
-        <path d="M 48 46 Q 60 56 72 46" fill="none" stroke="#000" stroke-width="3.2" stroke-linecap="square"/>
-      </svg>
-    </a>
     <nav class="site-nav">
-      <div class="logo-text">
-        <button href="#">frlfnz.ch</button>
-          </div>
-          <div></div>
-          <div>
-            <button href="#">index</button>
-          </div>
-          <div>
-            <button href="#">about</button>
-          </div>
+      <a class="nav-home logo-text" href="../../index.html">frlfnz.ch</a>
+      <a class="logo logo--index" aria-label="frlfnz.ch">
+  <svg class="logo-shape" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+    <ellipse cx="50" cy="50" rx="50" ry="50"
+             fill="#F5E600" stroke="#000" stroke-width="1.2"
+             vector-effect="non-scaling-stroke"/>
+  </svg>
+  <svg class="logo-face" viewBox="42 18 36 38" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="52" cy="24" r="3.2" fill="#000"/>
+    <circle cx="68" cy="24" r="3.2" fill="#000"/>
+    <line x1="60" y1="29" x2="60" y2="42" stroke="#000" stroke-width="3.2" stroke-linecap="square"/>
+    <path d="M 48 46 Q 60 56 72 46" fill="none" stroke="#000" stroke-width="3.2" stroke-linecap="square"/>
+  </svg>
+</a>
+        
+      <a class="nav-index" href="../../index_projects.html">index</a>
+      <a class="nav-about" href="../../about/about.html">about</a>
     </nav>
   </header>
   <main>
@@ -37,7 +35,7 @@
             <img class="project-header-image" src="media/_head.jpg">
     </div>
 
-     <section class="project-info">
+     <section class="project-info project-info--sticky">
                 <h2>Bümpliz</h2>
                 <p>Type-Design</p>
                 <time datetime="2024-06-01">2026</time>
@@ -45,15 +43,27 @@
                 <p class="project-text"> Bümpliz ist ein Typeface das auf dem Lettering für das Poster "Golfjugo im Kaff" entstand. Im Laufe des Projektes analysierten wir die Kompotnente des Letterings & bastelten daraus ein Display-Font.
 
                 </p>
+                <p>Mentoriert von <br> > Gilliane Cachin<br> > Samira Schneuwly<br> > David Keshavjee</br></p>
 
-                <dl class="project-meta">
-                  <dt><a href="#">Software</a></dt>
-                  <dd>Gylphs</dd>
-                  <dt><a href="#">Mentors</a></dt>
-                  <dd>Gilliane Cachin<br>Samira Schneuwly</dd>
-                </dl>
+            
               </section>
+      <div class="project-content">
+        <img class="project-image" src="media/_1.jpg">
+        <img class="project-image" src="media/_2.jpg">
+        <img class="project-image" src="media/_3.jpg">
+        <img class="project-image" src="media/_4.jpg">
+      </div>
           </main>
+    <footer>
+      <p>Leslie Klaffke</p>
+      <div>
+        <p>yo@flrfnz.ch</p>
+        <p>@frlfnzch</p>
+    </div>
+      
+      <p>Made in September 2026</p>
+</footer>
   <script src="script.js"></script>
+  <script src="../../js/about-overlay.js"></script>
 </body>
 </html>

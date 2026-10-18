@@ -25,60 +25,16 @@ function updateLogo() {
 updateLogo();
 window.addEventListener('resize', updateLogo);
 
-// (function bounce() {
-//   const el = document.getElementById("bouncer");
+window.addEventListener('load', async () => {
+  const ball = document.querySelector('.smiley')?.getAnimations()[0];
+  if (!ball) return;                                  // z. B. bei reduced motion
 
-//   // current vertical position + speed, in px/second
-//   let y = 220;
-//   let speedY = 110;
-//   let dirY = 1;
+  const pops = [...document.querySelectorAll('.command, .command-img')]
+    .flatMap(el => el.getAnimations());
 
-//   let lastTime = null;
+  await Promise.all([ball, ...pops].map(a => a.ready));
 
-//   function getBounds() {
-//     const headerH = document.querySelector(".site-header").offsetHeight;
-//     const rect = el.getBoundingClientRect();
-//     return {
-//       minY: headerH * 0.55, // allow it to slightly tuck under the fade
-//       maxY: window.innerHeight - rect.height,
-//     };
-//   }
-
-//   function step(timestamp) {
-//     if (lastTime === null) lastTime = timestamp;
-//     const dt = (timestamp - lastTime) / 1000;
-//     lastTime = timestamp;
-
-//     const b = getBounds();
-
-//     y += speedY * dirY * dt;
-
-//     if (y <= b.minY) {
-//       y = b.minY;
-//       dirY = 1;
-//     } else if (y >= b.maxY) {
-//       y = b.maxY;
-//       dirY = -1;
-//     }
-
-//     el.style.transform = `translateY(${y}px)`;
-
-//     requestAnimationFrame(step);
-//   }
-
-//   // respect reduced-motion preference: keep it centered, no animation
-//   const prefersReducedMotion = window.matchMedia(
-//     "(prefers-reduced-motion: reduce)"
-//   ).matches;
-
-//   if (prefersReducedMotion) {
-//     window.addEventListener("load", () => {
-//       const b = getBounds();
-//       y = (b.minY + b.maxY) / 2;
-//       el.style.transform = `translateY(${y}px)`;
-//     });
-//   } else {
-//     requestAnimationFrame(step);
-//   }
-// })();
+  // alle "pop"-Animationen auf denselben Startzeitpunkt wie den Ball setzen
+  pops.forEach(a => { a.startTime = ball.startTime; });
+});
 

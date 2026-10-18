@@ -1,0 +1,41 @@
+/* .leslie {
+    --jump: 25vh;                                    
+  --bottom: calc((100vh - 20vw) / 2);
+  --top: calc(var(--bottom) - var(--jump));
+  width: 30vh;
+  margin-left: auto;
+  padding: 0px 30px;
+  height: auto;
+  display: block;
+  transform-origin: 50% 100%;     
+  will-change: transform;
+  animation: ball 1.4s infinite;
+} */
+@keyframes ball {
+  0%,100% {
+    transform: translateY(var(--top)) scale(1, 1);
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 0.45);
+  }
+  44% {
+    transform: translateY(var(--bottom)) scale(0.97, 1.08);
+    animation-timing-function: ease-out;
+  }
+  50% {
+    transform: translateY(var(--bottom)) scale(1.05, 0.7);
+    animation-timing-function: ease-in;
+  }
+  56% {
+    transform: translateY(var(--bottom)) scale(0.97, 1.08);
+    animation-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .smiley {
+    animation: none;
+  }
+}
+
+main {
+  height: 100vh;
+}

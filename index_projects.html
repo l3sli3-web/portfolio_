@@ -4,61 +4,70 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>frlfnz.ch/index</title>
-<link rel="stylesheet" href="css/style_index_projects.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style_index_projects.css">
 </head>
 <body>
 
   <header class="site-header">
-    <a href="#" class="logo">
-      <svg class="logo-icon" viewBox="0 0 120 66" xmlns="http://www.w3.org/2000/svg">
-        <ellipse cx="60" cy="33" rx="67" ry="30" fill="#F5E600" stroke="#000" stroke-width="2"/>
-        <circle cx="52" cy="24" r="3.2" fill="#000"/>
-        <circle cx="68" cy="24" r="3.2" fill="#000"/>
-        <line x1="60" y1="29" x2="60" y2="42" stroke="#000" stroke-width="3.2" stroke-linecap="square"/>
-        <path d="M 48 46 Q 60 56 72 46" fill="none" stroke="#000" stroke-width="3.2" stroke-linecap="square"/>
-      </svg>
-    </a>
     <nav class="site-nav">
-      <div>
-        <button class="logo-text">frlfnz.ch</button>
-          </div>
-          <div></div>
-          <div>
-            <button href="#">index</button>
-          </div>
-          <div>
-            <button href="#">about</button>
-          </div>
+      <a href="index.html" class="nav-home logo-text">frlfnz.ch</a>
+      <a class="logo logo--index" aria-label="frlfnz.ch">
+  <svg class="logo-shape" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+    <ellipse cx="50" cy="50" rx="50" ry="50"
+             fill="#F5E600" stroke="#000" stroke-width="1.2"
+             vector-effect="non-scaling-stroke"/>
+  </svg>
+  <svg class="logo-face" viewBox="42 18 36 38" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="52" cy="24" r="3.2" fill="#000"/>
+    <circle cx="68" cy="24" r="3.2" fill="#000"/>
+    <line x1="60" y1="29" x2="60" y2="42" stroke="#000" stroke-width="3.2" stroke-linecap="square"/>
+    <path d="M 48 46 Q 60 56 72 46" fill="none" stroke="#000" stroke-width="3.2" stroke-linecap="square"/>
+  </svg>
+</a>
+        
+      <a class="nav-index" href="index_projects.html">index</a>
+      <a class="nav-about" href="about/about.html">about</a>
     </nav>
   </header>
   <main>
     <section class="projects">
-        <div class="index-project">
-          <img class="project-image" src="assets/media/index_bümpliz.jpg">
-          <div class="index-titles">
+      <a href="projects/bümpliz/projects_bümpliz.html" class="index-project">
+            <img class="project-image" src="assets/media/index_bümpliz.jpg">
+            <div class="index-titles">
             <h2>Bümpliz</h2>
-          </div>
+            </div>
+      </a>
+        
         </div>
         <div class="index-project">
+          <a href="projects/gerüchteküche/gerüchteküche.html">
           <img class="project-image" src="assets/media/index_gerüchteküche.jpg">
           <div class="index-titles">
             <h2>Gerüchteküche</h2>
           </div> 
+          </a>
         </div>
+
       <div class="index-project">
+          <a href="projects/sonos/projects_sonos.html">
           <img class="project-image" src="assets/media/index_sonos.jpg">
           <div class="index-titles">
             <h2>Sonos</h2>
           </div>
+
+          </a>
         </div>
+
+
         <div class="index-project">
+            <a href="projects/yolo/projects_yolo.html">
           <img class="project-image" src="assets/media/index_yolo_sep.jpg">
           <div class="index-titles">
             <h2>Yolo Sep</h2>
           </div>
           </div>
-          <div class="index-project">
+          <!-- <div class="index-project">
           <img class="project-image" src="assets/media/index_täterschutz.jpg">
           <div class="index-titles">
             <h2>Täterschutz</h2>
@@ -69,10 +78,20 @@
           <div class="index-titles">
             <h2>Eis!</h2>
           </div>
-        </div>
+        </div> -->
     </section>
   </main>
+  <footer>
+      <p>Leslie Klaffke</p>
+      <div>
+        <p>yo@flrfnz.ch</p>
+        <p>@frlfnzch</p>
+    </div>
+      
+      <p>Made in September 2026</p>
+</footer>
 
   <script src="script.js"></script>
+  <script src="js/about-overlay.js"></script>
 </body>
 </html>

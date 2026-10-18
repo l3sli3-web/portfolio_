@@ -4,7 +4,7 @@
   width: 100vw;
   justify-content: center;
   align-items: center;
-  border: 5px solid var(--yellow);
+  border-bottom: 1px solid var(--yellow);
   background: var(--black);
 }
 
@@ -19,7 +19,7 @@
 /* ——————————small screen styles——————————— */
 @media (max-width: 600px) {
   .header {
-    border-width: 3px;
+    border-bottom-width: 1px;
   }
 
   .project-header-image {
@@ -30,3 +30,19 @@
   }
 }
 
+.project-content{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-image {
+  display: block;
+  height: 100vh;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  padding: 20px;
+}

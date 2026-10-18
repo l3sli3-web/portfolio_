@@ -4,24 +4,53 @@ main {
   width: 100vw;
   min-height: 100vh;
   display: flex;
+  justify-content: center;
 }
 
 .projects {
   width: 100vw;
+  padding: 0px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1em;
+  gap: 0em;
   align-content: baseline;
 }
 
 .index-project {
+  border-bottom: 1px solid var(--yellow);
   position: relative;
   container-type: inline-size;
+  display: flex;
+  justify-content: center;
 }
 
 .project-image {
-  border: 5px solid #F5E600;
   width: 100%;
+}
+
+@media (hover: hover) {
+  .index-titles {
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  /* .project-image {
+    filter: blur(7px);
+    transition: filter 0.3s;
+  } */
+  .index-project:hover {
+    border-bottom: 1px solid var(--yellow);
+  }
+
+  .index-project:hover .index-titles,
+  .index-project:focus-visible .index-titles {
+    opacity: 1;
+  }
+
+  .index-project:hover .project-image,
+  .index-project:focus-visible .project-image {
+    filter: blur(0);
+  }
 }
 
 /* ———————————small screens———————————— */
