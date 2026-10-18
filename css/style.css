@@ -5,6 +5,7 @@
   --label-size: 15px;
   --bounce-dur: 1.4s;
   --stage-h: 100vh;
+  --smiley-h: 20vw;
 }
 *, *::before, *::after {
   box-sizing: border-box;
@@ -162,7 +163,7 @@ a {
 
 .hero {
   width: 100%;
-  height: calc(var(--stage-h) - max(var(--header-h), 160px));
+  height: calc(var(--stage-h) - var(--header-h));
 }
 
 .bouncer {
@@ -175,18 +176,23 @@ a {
   align-items: center;
   justify-content: center;
   pointer-events: none;
+  z-index: 2;
 }
 
 .smiley {
   width: 100%;
   height: auto;
   display: block;
-  --top: calc((20vw - var(--stage-h) / 2) / 2);
-  --bottom: calc((var(--stage-h) - 20vw) / 2);
+  --top: calc((var(--smiley-h) - var(--stage-h) / 2) / 2);
+  --bottom: calc((var(--stage-h) - var(--smiley-h)) / 2);
   transform-origin: 50% 100%;      /* Verformung von der Unterkante aus, wie ein Ball auf dem Boden */
   will-change: transform;
   animation: ball var(--bounce-dur) infinite;
 }
+.smiley--tall {
+  display: none;
+}
+
 @keyframes ball {
   0%,100% {
     transform: translateY(var(--top)) scale(1, 1);
@@ -203,26 +209,6 @@ a {
   56% {
     transform: translateY(var(--bottom)) scale(0.97, 1.08);
     animation-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .smiley {
-    animation: none;
-  }
-}
-/* ---------- Small screens ---------- */
-
-@media (max-width: 640px) {
-  .site-nav {
-    gap: 24px;
-  }
-  
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .bouncer {
-    transition: none;
   }
 }
 
@@ -295,37 +281,6 @@ a {
   text-decoration: underline;
 }
 
-@media (max-width: 600px) {
-
-  /* Smiley-Bühne nur halber Bildschirm */
-  :root {
-    --stage-h: 50vh;
-  }
-
-  /* Bilder: volle Breite, Seitenverhältnis bleibt */
-  .home-mood {
-    width: 100%;
-    height: auto;
-    max-width: none;
-  }
-
-  /* Footer einspaltig */
-  footer {
-    flex-direction: column;
-    }
-
-  .project-info {
-    grid-template-columns: 1fr 1fr;
-    width: 100%;
-  }
-
-  .leslie {
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }
-}
-
 /* ---------- Footer ---------- */
 
 body {
@@ -341,13 +296,16 @@ main {
 footer {
   margin-top: 5em;
   display: flex;
-  flex-wrap: wrap;          /* ← neu: Smiley bekommt eine eigene Zeile */
+  flex-wrap: wrap;
   background-color: var(--yellow);
-  /* padding: 10px; */
-  line-height: 0.2em;
+  padding: 10px;
+  line-height: 1.1;
   gap: 5em;
 }
 
+footer p {
+  margin: 0;
+}
 /* ______________________about-overlay____________________ */
 
 .about-text {
@@ -438,4 +396,80 @@ body.about-open {
   display: block;
   object-fit: cover;
   object-position: center;
+}
+/* _________________small screens____________________________ */
+@media (max-width: 600px) {
+  :root {
+    --stage-h: 100svh;
+  }
+
+  .smiley--wide {
+    display: none;
+  }
+
+  .bouncer {
+    top: var(--header-h);                               /* Bühne beginnt unter der Nav */
+    height: calc(var(--stage-h) - var(--header-h));
+    align-items: flex-end;                              /* Smiley an die Unterkante */
+  }
+
+  .smiley--tall {
+    display: block;
+    width: 95vw;
+    max-height: 100%;
+    animation: none;
+    transform: none;
+  }
+
+  .home-mood {
+    width: 100%;
+    height: auto;
+    max-width: none;
+  }
+
+  .project-info {
+    grid-template-columns: 1fr;   /* eine Spalte */
+    width: 100%;
+  }
+
+  .project-info--sticky {
+    position: relative;           /* nicht mehr sticky */
+  }
+
+  .project-image {
+   width: 100%;
+    height: auto;
+    padding: 10px 0;
+  }
+  
+  img.project-image {
+    padding: 0px 10px;
+  }
+
+  .leslie {
+    width: 50%;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  .smiley-end {
+    flex: none;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-nav {
+    gap: 24px;
+  }
+  
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bouncer {
+    transition: none;
+  }
 }

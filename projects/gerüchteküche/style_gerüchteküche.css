@@ -16,35 +16,14 @@
   object-position: center;
 }
 
-
-/* ——————————small screen styles——————————— */
-@media (max-width: 600px) {
-  .header {
-    border-bottom-width: 1px;
-  }
-
-  .project-header-image {
-    aspect-ratio: 4 / 3;   /* Bild wird höher, Seiten werden abgeschnitten */
-    object-fit: cover;
-    object-position: center;
-  }
+.project-content-grid-two{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.project-content{
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.project-image {
-  display: block;
-  height: 100vh;
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
-  padding: 20px;
+.project-content-grid-three{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 /* ——————————p5.js styling——————————— */
 .project-sketch {
@@ -56,4 +35,24 @@
   margin: 0 auto;            /* Padding im iframe verschiebt die Darstellung */
   border: none;
   cursor: crosshair;
+}
+
+
+/* ——————————small screen styles——————————— */
+@media (max-width: 600px) {
+  .project-header-image {
+    height: auto;            /* sonst wird aspect-ratio ignoriert */
+    aspect-ratio: 4 / 3;
+  }
+
+  .project-content-grid-two,
+  .project-content-grid-three {
+    grid-template-columns: 1fr;   /* alles in einer Spalte */
+  }
+
+  .project-image {
+    width: 100%;
+    height: auto;            /* statt 100vh, sonst riesige Lücken */
+    padding: 10px;
+  }
 }

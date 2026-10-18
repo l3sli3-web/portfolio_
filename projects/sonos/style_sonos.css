@@ -15,6 +15,15 @@
   object-fit: cover;
   object-position: center;
 }
+.project-content-grid-two{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.project-content-grid-three{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
 
 
 /* ——————————small screen styles——————————— */
@@ -29,14 +38,6 @@
     object-fit: cover;
     object-position: center;
   }
-}
-
-.project-content{
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
 }
 
 .project-image {
