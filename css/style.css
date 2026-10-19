@@ -1,7 +1,7 @@
 :root {
   --yellow: #F5E600;
   --black: #000000;
-  --header-h: 15vh;
+  --header-h: 3.5em;
   --label-size: 15px;
   --bounce-dur: 1.4s;
   --stage-h: 100vh;
@@ -262,7 +262,7 @@ a {
   grid-template-columns: 3fr 3fr 1fr;   /* breite Textspalte + zwei schmale, wie in Figma */
   column-gap: 1em;
   row-gap: 0.6em;
-  width: 45%;
+  width:min(65em, 100%);
   /* margin-top: -1.5em;                    zieht die Titelzeile auf die Bildunterkante */
   padding: 0.3em 2em 1.5em 0.4em;
   background: var(--yellow);
@@ -298,7 +298,7 @@ footer {
   display: flex;
   flex-wrap: wrap;
   background-color: var(--yellow);
-  padding: 10px;
+  padding: 3em;
   line-height: 1.1;
   gap: 5em;
 }
@@ -316,7 +316,8 @@ footer p {
   grid-template-columns: 1fr 1fr 1fr;   /* breite Textspalte + zwei schmale, wie in Figma */
   column-gap: 1em;
   row-gap: 0.6em;
-  width: 45%;
+  width: 50em;
+  max-width: 100%;
   padding: 0.3em 2em 1.5em 0.4em;
   background: var(--yellow);
   font-size: var(--label-size);
@@ -373,8 +374,9 @@ footer p {
 
 .about-close {
   position: absolute;
-  top: 5em;
-  right: 5em;
+  top: 2em;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 2;
   font: inherit;
   font-size: var(--label-size);
@@ -398,7 +400,7 @@ body.about-open {
   object-position: center;
 }
 /* _________________small screens____________________________ */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   :root {
     --stage-h: 100svh;
   }
@@ -425,15 +427,6 @@ body.about-open {
     width: 100%;
     height: auto;
     max-width: none;
-  }
-
-  .project-info {
-    grid-template-columns: 1fr;   /* eine Spalte */
-    width: 100%;
-  }
-
-  .project-info--sticky {
-    position: relative;           /* nicht mehr sticky */
   }
 
   .project-image {
@@ -472,4 +465,26 @@ body.about-open {
   .bouncer {
     transition: none;
   }
+}
+/* ---------- Mittlere Screens (Tablet, kleine Laptops) ---------- */
+@media (max-width: 800px) {
+  .project-info {
+    grid-template-columns: 1fr;   /* eine Spalte */
+    width: 100%;
+  }
+
+  .project-info--sticky {
+    position: relative;           /* nicht mehr sticky */
+  }
+  .about-text {
+    grid-template-columns: 1fr;   /* eine Spalte */
+    width: 85%;
+  }
+
+  /* .about-close {
+    right: auto;                  /* hebt right: 5em auf */
+    /* left: 50%;
+    transform: translateX(-50%);  /* exakt mittig, egal wie breit der Button ist */
+    /* top: 2em; */
+  /* } */ 
 }
