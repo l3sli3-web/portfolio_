@@ -16,6 +16,24 @@
   object-position: center;
 }
 
+.project-content{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  margin-top: 2em;
+}
+
+.project-image {
+  display: block;
+  height: 100vh;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  padding: 20px;
+}
 
 /* ——————————small screen styles——————————— */
 @media (max-width: 800px) {
@@ -27,21 +45,10 @@
    height: auto;
     aspect-ratio: 4 / 3;   /* Bild wird höher, Seiten werden abgeschnitten */
   }
-}
+  .project-image {
+    width: 100%;
+    height: auto;      
+    padding: 10px;
+  }
 
-.project-content{
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.project-image {
-  display: block;
-  height: 100vh;
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
-  padding: 20px;
 }
